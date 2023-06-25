@@ -1,0 +1,14 @@
+{{template "base" .}}
+
+{{ define "content" }}
+<h1>About</h1>
+<p>some text</p>
+<p>{{index .StringMap "greeting"}}</p>
+<p>
+    {{ if ne index .StringMap "remote_ip" }}
+    You're remote IP address is {{.StringMap "remote_ip"}}
+    {{ else }}
+    We couldn't find your IP address
+    {{end}}
+</p>
+{{end}}
