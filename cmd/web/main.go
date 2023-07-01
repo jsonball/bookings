@@ -3,17 +3,20 @@ package main
 import (
 	"fmt"
 	"log"
+	"net/http"
+	"sync"
+	"time"
+
 	"github.com/jsonball/bookings/config"
 	"github.com/jsonball/bookings/handlers"
 	"github.com/jsonball/bookings/render"
-	"net/http"
-	"time"
 
 	"github.com/alexedwards/scs/v2"
 )
 
 var session *scs.SessionManager
 var app config.AppConfig
+var once sync.Once
 
 func main() {
 	portNumber := ":8080"
@@ -28,23 +31,15 @@ func main() {
 	// stores cookie in app config type var: app
 	app.Session = session
 
-	tc, err := render.CreateTemplateCache()
-	if err != nil {
-		log.Println(err)
-	} else {
-		app.TemplateCache = tc
-	}
-	app.UseCache = app.InProduction
-	render.SetAppConfig(&app)
-
-	repo := handlers.NewRepo(&app)
-	handlers.NewHandlers(repo)
+	once.Do(render.CreateTemplateCache)
+	r := handlers.NewRepo(&app)
+	handlers.NewHandlers(r)
 
 	fmt.Println("Listening on port :8080")
 	serve := &http.Server{
 		Addr:    portNumber,
-		Handler: Routes(&app),
+		Handler: Routes(),
 	}
-	err = serve.ListenAndServe()
+	err := serve.ListenAndServe()
 	log.Fatal(err)
 }

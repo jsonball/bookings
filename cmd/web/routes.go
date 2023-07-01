@@ -1,18 +1,22 @@
 package main
 
 import (
-	"github.com/jsonball/bookings/config"
-	"github.com/jsonball/bookings/handlers"
 	"net/http"
+
+	"github.com/jsonball/bookings/handlers"
 
 	"github.com/go-chi/chi/v5"
 )
 
-func Routes(app *config.AppConfig) http.Handler {
+func Routes() http.Handler {
 
 	mux := chi.NewRouter()
 	mux.Use(NoSurf)
 	mux.Use(SessionSaveAndLoad)
+
+	fileServer := http.FileServer(http.Dir("public"))
+	mux.Handle("/public/*", http.StripPrefix("/public/", fileServer))
+
 	mux.Get("/", handlers.Repo.Home)
 	mux.Get("/about", handlers.Repo.About)
 

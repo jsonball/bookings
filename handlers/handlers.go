@@ -1,10 +1,11 @@
 package handlers
 
 import (
+	"net/http"
+
 	"github.com/jsonball/bookings/config"
 	"github.com/jsonball/bookings/models"
 	"github.com/jsonball/bookings/render"
-	"net/http"
 )
 
 var Repo *Repository
