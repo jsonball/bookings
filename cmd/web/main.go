@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"net/http"
@@ -30,8 +31,9 @@ func main() {
 	session.Cookie.Secure = app.InProduction
 	// stores cookie in app config type var: app
 	app.Session = session
-
-	once.Do(render.CreateTemplateCache)
+	render.ClearTemplateCache()
+	// uncomment the code below in production
+	// once.Do(render.CreateTemplateCache)
 	r := handlers.NewRepo(&app)
 	handlers.NewHandlers(r)
 
@@ -42,4 +44,8 @@ func main() {
 	}
 	err := serve.ListenAndServe()
 	log.Fatal(err)
+
+	if err := serve.Shutdown(context.Background()); err != nil {
+		log.Fatal(err)
+	}
 }

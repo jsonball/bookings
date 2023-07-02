@@ -1,14 +1,26 @@
 {{template "base" .}}
 
-{{ define "content" }}
-<h1>About</h1>
-<p>some text</p>
-<p>{{index .StringMap "greeting"}}</p>
-<p>
-    {{ if ne index .StringMap "remote_ip" }}
-    You're remote IP address is {{.StringMap "remote_ip"}}
-    {{ else }}
-    We couldn't find your IP address
-    {{end}}
+{{define "content"}}
+<div class="bg-gradient-to-r relative z-10 from-pink-500 to-blue-500 p-6 rounded-xl max-w-md m-auto drop-shadow-lg">
+    <h1 class=" text-xl text-center text-white ">About Us</h1>
+</div>
+<img src="/public/images/text-decoration.png" class="mx-auto block z-0 h-32">
+
+<div class="max-w-md  -top-10 drop-shadow-md bg-gradient-to-r p-8 from-pink-500 to-blue-500 rounded-2xl relative text-white font-light m-auto">
+    <p class="w-72">We started from a remote area in the Amazon,
+    surviving off of grass.
 </p>
+<img src="/public/images/amazon.webp" alt="the amazon rain" class="rounded-xl mt-8 h-auto">
+</div>
+<div class="-top-10 relative">
+    <img src="/public/images/text-decoration.png" class="mx-auto block z-0 h-32">
+
+    <div class="max-w-md  -top-10 drop-shadow-md bg-gradient-to-r p-8 from-pink-500 to-blue-500 rounded-2xl relative text-white font-light m-auto">
+        <p class="w-72">
+            Ten years later, we own a lovely English bed and breakfast!
+        </p>
+        <img src="/public/images/outside.png" alt="the amazon rain" class="rounded-xl mt-8 h-auto">
+    </div>
+</div>
+
 {{end}}

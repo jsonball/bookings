@@ -5,5 +5,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
+  browserslist: {
+    // Add Firefox version 75 and above
+    'firefox >= 75'
+  },
 }
 

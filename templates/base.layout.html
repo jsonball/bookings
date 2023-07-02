@@ -13,12 +13,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/public/css/styles.css">
     </head>
-    <body class="bg-blue-700 text-cyan-100 font-bold ">
+    <body class="bg-blue-900 overflow-x-hidden">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+            <div class="w-screen h-16 backdrop-filter font-thin backdrop-blur-2xl z-20 flex m-auto space-x-16 sticky top-0 text-white bold items-center justify-center">
+                <a href="/" class="h-full flex items-center">
+                    <div>
+                        <p>Home</p>
+                    </div>
+                </a>
+                <div>
+                    <p>Book Now</p>
+                </div>
+                <a href="/about" class="h-full flex items-center">
+                    <div>
+                        <p>About</p>
+                    </div>
+                </a>
+                <div>
+                    <p>Contact</p>
+                </div>
+            </div>
+    
+        
         {{block "content" .}}
+
         {{end}}
+        
         <script src="" async defer></script>
     </body>
 </html>
