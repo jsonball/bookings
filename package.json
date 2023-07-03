@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"postcss ./src/styles.css -o ./styles.css\" \" go run ./cmd/web/."
-
+    "start": "concurrently \"postcss ./src/styles.css -o ./public/css/styles.css\" \" go run ./cmd/web/."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^8.2.0",
+    "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2"
   }
 }

@@ -1,34 +1,35 @@
 {{template "base" .}}
 
 {{define "content"}}
-<div class="flex p-8 max-w-3xl flex-col mx-auto align-middle">
-    
-    <div class="flex space-x-6 h-96 mb-6">
-        <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
-            <h1 class="my-4 text-xl">English Retreat</h1>
-            <img class="rounded-lg" src="./public/images/outside.png"/>
-            <p class="my-4 font-thin">Step into the magic</p>
-        </div>
-        <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
-            <h1 class="my-4 text-xl">Feel Special</h1>
-            <img class="rounded-lg" src="./public/images/tray.png"/>
-            <p class="my-4 font-thin">World class service is one call away</p>
-        </div>
+<div class="flex justify-center items-center">
+    <div class="p-8 grid mx-auto justify-items-center grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/english-retreat">
+            <div class="text-white max-w-md flex-grow h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl p-8">
+                <h1 class="my-4 text-xl">English Retreat</h1>
+                <img class="rounded-lg" src="./public/images/outside.png"/>
+                <p class="my-4 font-thin">Why is England the best get-away?</p>
+            </div>
+        </a>
+            <div class="text-white max-w-md flex-grow h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl p-8">
+                <h1 class="my-4 text-xl">Feel Special</h1>
+                <img class="rounded-lg" src="./public/images/tray.png"/>
+                <p class="my-4 font-thin">World class service is one call away</p>
+            </div>
+
+            <div class="text-white max-w-md flex-grow h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl p-8">
+                <h1 class="my-4 text-xl">Relax</h1>
+                <img class="rounded-lg" src="./public/images/woman-laptop.png"/>
+                <p class="my-4 font-thin">Comfort and solice are right here</p>
+            </div>
+            <a class="space-x-0" href="/room-index">
+                <div class="text-white max-w-md flex-grow h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl p-8">
+                    <h1 class="my-4 text-xl">Explore Our Rooms</h1>
+                    <img class="rounded-lg" src="/public/images/room-images/generals-quarters.png"/>
+                    <p class="my-4 font-thin">See what we have to offer!</p>
+                </div>
+            </a>
     </div>
     
-    <div class="flex space-x-6 h-96">
-        <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
-            <h1 class="my-4 text-xl">Relax</h1>
-            <img class="rounded-lg" src="./public/images/woman-laptop.png"/>
-            <p class="my-4 font-thin">Comfort and solice are right here</p>
-        </div>
-    <a href="/contact">
-        <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
-            <h1 class="my-4 text-xl">Contact Us!</h1>
-            <p class="my-4 font-thin">Ask any questions you have to our lovely customer service team!</p>
-        </div>
-    </a>
-    </div>
 </div>
 
 

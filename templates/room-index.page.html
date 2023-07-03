@@ -1,0 +1,29 @@
+{{template "base" .}}
+
+{{define "content"}}
+<h1 class="mx-auto mb-4 block text-center text-2xl text-white">Rooms</h1>
+ <div class="flex mx-auto p-6 text-center align-middle items-center justify-center">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <a href="/generals-quarters">
+            <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
+                <h1 class="my-4 text-xl">General's Quarters</h1>
+                <img class="rounded-lg" src="./public/images/room-images/generals-quarters.png"/>
+                <p class="my-4 font-thin">
+                    The General's Quarters are extremely cozy.
+                </p>
+            </div>
+        </a>
+        <a href="/majors=-suite">
+            <div class="text-white max-w-md h-full drop-shadow-md bg-gradient-to-r from-pink-500 to-blue-500 rounded-2xl my-3 p-8">
+                <h1 class="my-4 text-xl">Major's Suite</h1>
+                <img class="rounded-lg" src="/public/images/room-images/majors-suite.png"/>
+                <p class="my-4 font-thin">
+                    This is an incredibly inviting room. You'll feel right at home.
+                </p>
+            </div>
+        </a>
+    </div>
+ </div>
+
+{{end}}

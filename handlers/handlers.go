@@ -34,3 +34,9 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 func (m *Repository) Contact(w http.ResponseWriter, r *http.Request) {
 	render.RenderTemplate(w, "contact.page.html", &models.TemplateData{})
 }
+func (m *Repository) RoomIndex(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "room-index.page.html", &models.TemplateData{})
+}
+func (m *Repository) EnglishRetreat(w http.ResponseWriter, r *http.Request) {
+	render.RenderTemplate(w, "english-retreat.page.html", &models.TemplateData{})
+}
